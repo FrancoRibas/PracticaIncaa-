@@ -11,6 +11,10 @@ public class Incaa {
 		super();
 		this.catalogo = catalogo;
 	}
+	public Incaa() {
+		super();
+		this.catalogo = new ArrayList<Pelicula>();
+		}
 
 	public List<Pelicula> getCatalogo() {
 		return catalogo;
@@ -33,12 +37,13 @@ public class Incaa {
 			agregado = catalogo.add(new Pelicula(0, nombrePelicula));
 		} else {
 			//Conrtolo que la pelicula a agregar no este en la lista
-			while (!agregado && indice < catalogo.size()) {
-				
-				
-				
+			while (indice < catalogo.size()) {
+				if (catalogo.get(indice).getPelicula()==nombrePelicula) {
+					throw new Exception("Error: la pelicula ya esta en el caltalogo");
+				}
 				indice++;
 			}
+		agregado = catalogo.add(new Pelicula(catalogo.get(catalogo.size()-1).getIdPelicula()+1, nombrePelicula));
 		}
 
 		return agregado;
