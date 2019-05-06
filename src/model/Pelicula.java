@@ -32,10 +32,12 @@ public class Pelicula {
 		return "Incaa [idPelicula=" + idPelicula + ", pelicula=" + pelicula + "]";
 	}
 
+	// por nombre
 	public boolean equals(Pelicula pelicula) {
-		
-		return true;
+		return this.pelicula==pelicula.getPelicula();
 	}
-	
-	
+	// por id
+	public boolean equals(int idPelicula) {
+		return this.idPelicula==idPelicula;
+	}
 }
