@@ -40,4 +40,8 @@ public class Pelicula {
 	public boolean equals(int idPelicula) {
 		return this.idPelicula==idPelicula;
 	}
+	
+	
+	
+	
 }

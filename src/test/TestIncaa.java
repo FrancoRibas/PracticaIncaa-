@@ -3,9 +3,6 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 import model.Incaa;
-import model.Pelicula;
-
-import model.Incaa;
 
 public abstract class TestIncaa {
 
@@ -30,7 +27,19 @@ public abstract class TestIncaa {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
+		try {
+			Incaa incaa1 = new Incaa();
+			incaa1.agregarPelicula("Monsters INK");
+			incaa1.agregarPelicula("Star Wars 7");
+			incaa1.agregarPelicula("Iron MaN");
+			System.out.println(incaa1.traerPelicula(2).toString());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		
+		
 	}
 
 }

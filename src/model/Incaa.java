@@ -43,10 +43,24 @@ public class Incaa {
 					throw new Exception("Error: la pelicula ya esta en el caltalogo");
 				}
 			}
-			agregado = catalogo.add(new Pelicula(catalogo.get(catalogo.size() - 1).getIdPelicula() + 1, nombrePelicula));
+			agregado = catalogo
+					.add(new Pelicula(catalogo.get(catalogo.size() - 1).getIdPelicula() + 1, nombrePelicula));
 		}
 
 		return agregado;
+	}
+
+	public Pelicula traerPelicula(int idPelicula) {
+		Pelicula peliculaRetornar = null;
+		int indice = 0;
+		while (peliculaRetornar == null && indice < catalogo.size()) {
+			if (catalogo.get(indice).equals(idPelicula)) {
+				peliculaRetornar = catalogo.get(indice);
+			}
+			indice++;
+		}
+
+		return peliculaRetornar;
 	}
 
 }
