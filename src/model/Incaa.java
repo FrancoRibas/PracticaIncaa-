@@ -63,4 +63,25 @@ public class Incaa {
 		return peliculaRetornar;
 	}
 
+	public List<Pelicula> traerPelicula(String parte) {
+		parte = parte.toLowerCase();
+		List<Pelicula> listaPelicula = new ArrayList<Pelicula>();
+		int indice = 0;
+		while (indice < catalogo.size()) {
+			if (catalogo.get(indice).getPelicula().indexOf(parte) > -1) {
+				listaPelicula.add(catalogo.get(indice));
+			}
+			indice++;
+		}
+
+		return listaPelicula;
+	}
+	/*
+	 * public String traerPelicula(String parte) { String Peliculas = ""; int indice
+	 * = 0; while (indice < catalogo.size()) { if
+	 * (catalogo.get(indice).getPelicula().indexOf(parte) >= 0) { Peliculas +=
+	 * catalogo.get(indice).getPelicula(); } indice++; }
+	 * 
+	 * return Peliculas; }
+	 */
 }

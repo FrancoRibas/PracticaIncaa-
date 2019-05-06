@@ -36,7 +36,16 @@ public abstract class TestIncaa {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
+		try {
+			Incaa incaa2 = new Incaa();
+			incaa2.agregarPelicula("Monsters INK");
+			incaa2.agregarPelicula("Star Wars 7");
+			incaa2.agregarPelicula("Star Wars 1");
+			incaa2.agregarPelicula("Star Wars 5");
+			System.out.println(incaa2.traerPelicula("star").toString());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		
 		
