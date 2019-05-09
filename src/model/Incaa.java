@@ -76,6 +76,7 @@ public class Incaa {
 
 		return listaPelicula;
 	}
+
 	/*
 	 * public String traerPelicula(String parte) { String Peliculas = ""; int indice
 	 * = 0; while (indice < catalogo.size()) { if
@@ -84,4 +85,18 @@ public class Incaa {
 	 * 
 	 * return Peliculas; }
 	 */
+	public boolean modiicarPelicula(int id, String pelicula) throws Exception {
+		String nombrePelicula = pelicula.toLowerCase();
+		Pelicula peliculaSeleccionada = traerPelicula(id);
+		boolean modificado = false;
+		if (peliculaSeleccionada != null) {
+			peliculaSeleccionada.setPelicula(pelicula);
+			modificado = true;
+		} else {
+			throw new Exception("La pelicula no existe");
+		}
+		return modificado;
+	}
+	
+	
 }
