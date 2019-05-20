@@ -31,11 +31,11 @@ public class Incaa {
 		return "Incaa [catalogo=" + catalogo + "]";
 	}
 
-	public boolean agregarPelicula(String pelicula) throws Exception {
+	public boolean agregarPelicula(String pelicula, Genero genero) throws Exception {
 		boolean agregado = false;
 		String nombrePelicula = pelicula.toLowerCase();
 		if (catalogo.isEmpty()) {
-			agregado = catalogo.add(new Pelicula(0, nombrePelicula));
+			agregado = catalogo.add(new Pelicula(0, nombrePelicula,genero));
 		} else {
 			// Conrtolo que la pelicula a agregar no este en la lista
 			for (int i = 0; i < catalogo.size(); i++) {
@@ -44,7 +44,7 @@ public class Incaa {
 				}
 			}
 			agregado = catalogo
-					.add(new Pelicula(catalogo.get(catalogo.size() - 1).getIdPelicula() + 1, nombrePelicula));
+					.add(new Pelicula(catalogo.get(catalogo.size() - 1).getIdPelicula() + 1, nombrePelicula, genero));
 		}
 
 		return agregado;
@@ -77,14 +77,6 @@ public class Incaa {
 		return listaPelicula;
 	}
 
-	/*
-	 * public String traerPelicula(String parte) { String Peliculas = ""; int indice
-	 * = 0; while (indice < catalogo.size()) { if
-	 * (catalogo.get(indice).getPelicula().indexOf(parte) >= 0) { Peliculas +=
-	 * catalogo.get(indice).getPelicula(); } indice++; }
-	 * 
-	 * return Peliculas; }
-	 */
 	public boolean modiicarPelicula(int id, String pelicula) throws Exception {
 		String nombrePelicula = pelicula.toLowerCase();
 		Pelicula peliculaSeleccionada = traerPelicula(id);

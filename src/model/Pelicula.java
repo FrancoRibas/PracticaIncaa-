@@ -3,13 +3,15 @@ package model;
 public class Pelicula {
 	private int idPelicula;
 	private String pelicula;
-
-	public Pelicula(int idPelicula, String pelicula) throws Exception {
+	private Genero genero;
+	
+	public Pelicula(int idPelicula, String pelicula, Genero genero) throws Exception {
 		super();
 		this.idPelicula = idPelicula;
 		this.setPelicula(pelicula);
+		this.genero=genero;
 	}
-
+	
 	public int getIdPelicula() {
 		return idPelicula;
 	}
@@ -26,7 +28,13 @@ public class Pelicula {
 		String nombrePelicula = pelicula.toLowerCase();
 		this.pelicula = nombrePelicula;
 	}
-
+	
+	public Genero getGenero() {
+		return genero;
+	}
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
 	@Override
 	public String toString() {
 		return "Incaa [idPelicula=" + idPelicula + ", pelicula=" + pelicula + "]";
