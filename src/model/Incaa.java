@@ -62,7 +62,7 @@ public class Incaa {
 
 		return peliculaRetornar;
 	}
-
+	
 	public List<Pelicula> traerPelicula(String parte) {
 		parte = parte.toLowerCase();
 		List<Pelicula> listaPelicula = new ArrayList<Pelicula>();
@@ -77,6 +77,19 @@ public class Incaa {
 		return listaPelicula;
 	}
 
+	public List<Pelicula> traerPelicula(Genero genero) {
+		List<Pelicula> listaPelicula = new ArrayList<Pelicula>();
+		int indice = 0;
+		while (indice < catalogo.size()) {
+			if (catalogo.get(indice).getGenero().equals(genero.getIdGenero())) {
+				listaPelicula.add(catalogo.get(indice));
+			}
+			indice++;
+		}
+
+		return listaPelicula;
+	}
+	
 	public boolean modiicarPelicula(int id, String pelicula) throws Exception {
 		String nombrePelicula = pelicula.toLowerCase();
 		Pelicula peliculaSeleccionada = traerPelicula(id);
