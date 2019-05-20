@@ -93,10 +93,20 @@ public class Incaa {
 			peliculaSeleccionada.setPelicula(pelicula);
 			modificado = true;
 		} else {
-			throw new Exception("La pelicula no existe");
+			throw new Exception("La pelicula a modificar no existe");
 		}
 		return modificado;
 	}
-	
-	
+
+	public boolean eliminarPelicula(int id) throws Exception {
+		boolean quitado = false;
+		Pelicula peliculaSeleccionada = traerPelicula(id);
+		if (peliculaSeleccionada != null) {
+			catalogo.remove(peliculaSeleccionada);
+		} else {
+			throw new Exception("La pelicula a eliminar no existe");
+		}
+		return quitado;
+	}
+
 }

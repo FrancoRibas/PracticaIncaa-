@@ -67,7 +67,39 @@ public abstract class TestIncaa {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-	
-		
+		try {
+			Incaa incaa2 = new Incaa();
+			incaa2.agregarPelicula("Monsters INK");
+			incaa2.agregarPelicula("Star Wars 7");
+			incaa2.agregarPelicula("Iron MaN");
+			System.out.println(incaa2.toString());
+			incaa2.eliminarPelicula(1);
+			System.out.println(incaa2.toString());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			Incaa incaa2 = new Incaa();
+			incaa2.agregarPelicula("Monsters INK");
+			incaa2.agregarPelicula("Star Wars 7");
+			incaa2.agregarPelicula("Iron MaN");
+			System.out.println(incaa2.toString());
+			incaa2.eliminarPelicula(1);
+			System.out.println(incaa2.toString());
+			incaa2.eliminarPelicula(1);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			Incaa incaa2 = new Incaa();
+			incaa2.agregarPelicula("Monsters INK");
+			incaa2.agregarPelicula("Star Wars 7");
+			incaa2.agregarPelicula("Iron MaN");
+			System.out.println(incaa2.toString());
+			incaa2.eliminarPelicula(4);
+			System.out.println(incaa2.toString());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
